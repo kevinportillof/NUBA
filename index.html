@@ -1,145 +1,283 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    < meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NUBA Repostería</title>
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #fffaf7;
-            color: #333;
-            line-height: 1.6;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NUBA | Proyecto Emprendedor</title>
 
-        header {
-            background-color: #c97a63;
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
+<style>
+* { box-sizing: border-box; }
 
-        header h1 {
-            margin: 0;
-            font-size: 3rem;
-        }
+body {
+  margin: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  background-color: #faf7f4;
+  background-image:
+    radial-gradient(#f2c1d1 0.5px, transparent 0.5px),
+    radial-gradient(#f7d046 0.5px, transparent 0.5px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+  color: #333;
+}
 
-        header p {
-            font-size: 1.2rem;
-        }
+/* ===== PANTALLAS ===== */
+.screen {
+  display: none;
+  width: 100vw;
+  min-height: 100vh; /* CLAVE */
+  padding: 40px 20px;
+  justify-content: center;
+  align-items: center;
+}
 
-        section {
-            padding: 40px 60px;
-        }
+.screen.active {
+  display: flex;
+}
 
-        h2 {
-            color: #c97a63;
-            border-bottom: 2px solid #c97a63;
-            padding-bottom: 10px;
-        }
+/* ===== INICIO ===== */
+#inicio .box {
+  background: rgba(255,255,255,0.9);
+  border-radius: 28px;
+  padding: 70px 40px;
+  text-align: center;
+  max-width: 760px;
+  width: 100%;
+  box-shadow: 0 30px 60px rgba(0,0,0,.15);
+}
 
-        ul {
-            margin-left: 20px;
-        }
+#inicio img {
+  max-width: 420px;
+  width: 100%;
+  margin-bottom: 40px;
+}
 
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            font-size: 0.9rem;
-        }
-    </style>
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.buttons button {
+  padding: 14px 28px;
+  border-radius: 50px;
+  border: none;
+  background: linear-gradient(135deg,#f2a7c6,#f7d046);
+  color: white;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+/* ===== CONTENIDO ===== */
+.content {
+  background: white;
+  border-radius: 20px;
+  padding: 50px;
+  max-width: 900px;
+  width: 100%;
+  box-shadow: 0 20px 40px rgba(0,0,0,.1);
+}
+
+.content h2 {
+  border-left: 6px solid #d6a5b5;
+  padding-left: 15px;
+  margin-top: 0;
+}
+
+.back {
+  margin-top: 30px;
+  background: #d6a5b5;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  #inicio .box {
+    padding: 40px 20px;
+  }
+
+  #inicio img {
+    max-width: 280px;
+    margin-bottom: 25px;
+  }
+
+  .buttons button {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+</style>
 </head>
 
 <body>
 
-<header>
-    <h1>NUBA</h1>
-    <p>Repostería Artesanal e Internacional</p>
-</header>
+<!-- ===== INICIO ===== -->
+<div id="inicio" class="screen active">
+  <div class="box">
+    <img src="https://i.ibb.co/m7K37hG/lope.png" alt="NUBA">
+    <div class="buttons">
+      <button onclick="show('nombre')">Nombre</button>
+      <button onclick="show('historia')">Historia</button>
+      <button onclick="show('equipo')">Equipo</button>
+      <button onclick="show('producto')">Producto</button>
+      <button onclick="show('ventaja')">Ventaja</button>
+    </div>
+  </div>
+</div>
 
-<section>
+<!-- ===== NOMBRE ===== -->
+<div id="nombre" class="screen">
+  <div class="content">
     <h2>Origen y Significado del Nombre</h2>
-    <p>
-        La elección del nombre <strong>NUBA</strong> surge como resultado de un proceso creativo enfocado en
-        representar la esencia, identidad y propuesta de valor de la empresa. Este nombre fue seleccionado
-        por su sonoridad corta, moderna y fácil de recordar, lo cual facilita su posicionamiento en la mente
-        del consumidor y fortalece el reconocimiento de la marca dentro del mercado local de Tepic, Nayarit.
-    </p>
-    <p>
-        NUBA transmite una sensación de originalidad, innovación y creatividad, valores directamente
-        relacionados con la elaboración de postres artesanales e internacionales personalizados. Además,
-        permite flexibilidad para el crecimiento y diversificación futura del negocio sin perder coherencia
-        con su identidad.
-    </p>
-</section>
 
-<section>
+    <p><strong>NUBA</strong></p>
+
+    <p>La elección del nombre NUBA surge como resultado de un proceso creativo enfocado en representar la esencia, identidad y propuesta de valor de la empresa. Este nombre fue seleccionado por su sonoridad corta, moderna y fácil de recordar, lo cual facilita su posicionamiento en la mente del consumidor y fortalece el reconocimiento de la marca dentro del mercado local de Tepic, Nayarit. Al tratarse de un nombre breve y distintivo, NUBA permite una identificación rápida y genera curiosidad, invitando al consumidor a conocer los productos que ofrece la empresa.</p>
+
+    <p>El nombre NUBA transmite una sensación de originalidad, innovación y creatividad, valores que están directamente relacionados con la elaboración de postres artesanales e internacionales personalizados. Su estructura simple y estética se adapta a distintos diseños gráficos y presentaciones visuales, lo que favorece su aplicación en empaques, redes sociales y material promocional. Además, el nombre no se limita a un solo tipo de producto, lo que brinda flexibilidad para que la empresa pueda crecer, diversificarse y adaptarse a nuevas líneas de postres o servicios en el futuro sin perder coherencia con su identidad.</p>
+
+    <p>Asimismo, NUBA representa el concepto de una marca que busca ofrecer experiencias memorables más allá del sabor, enfocándose en la presentación, el detalle y la conexión emocional con el cliente. El nombre refleja el compromiso de la empresa con la calidad, la personalización y la innovación constante, diferenciándose de otras opciones tradicionales del mercado. En conjunto, la elección del nombre NUBA responde a una estrategia pensada para proyectar una imagen fresca, moderna y confiable, alineada con los valores del proyecto emprendedor y con las expectativas del consumidor actual.</p>
+
+    <button class="back" onclick="show('inicio')">Volver al inicio</button>
+  </div>
+</div>
+
+
+<!-- ===== HISTORIA DEL NEGOCIO ===== -->
+<div id="historia" class="screen">
+  <div class="content">
     <h2>Historia del Negocio</h2>
-    <p>
-        La repostería NUBA surge como un proyecto emprendedor impulsado por tres jóvenes con una visión clara:
-        ofrecer postres de alta calidad inspirados en recetas internacionales, adaptadas al gusto del mercado
-        local. El proyecto está dirigido a hombres y mujeres de entre 15 y 49 años que buscan productos
-        innovadores y con identidad moderna.
-    </p>
-    <p>
-        NUBA inició con pedidos personalizados, permitiendo una relación cercana con los clientes y la mejora
-        continua de recetas, presentaciones y procesos productivos. Un elemento distintivo del proyecto es su
-        enfoque innovador en marketing, destacando el uso de llaveros impresos en 3D con tecnología NFC para
-        acceder a redes sociales.
-    </p>
-</section>
 
-<section>
+    <p>
+      La repostería NUBA surge como un proyecto emprendedor impulsado por tres jóvenes con una visión clara: ofrecer postres de alta calidad inspirados en recetas internacionales, cuidadosamente adaptadas al gusto y a las preferencias del mercado local. El proyecto nace del interés por la repostería profesional y del análisis de las tendencias actuales de consumo, donde hombres y mujeres de entre 15 y 49 años buscan productos innovadores, atractivos y con una identidad moderna, sin perder la esencia artesanal.
+    </p>
+
+    <p>
+      Desde su origen, NUBA fue concebida como un negocio estructurado y con enfoque empresarial, combinando la creatividad juvenil con una planeación estratégica. Los tres integrantes del proyecto aportan ideas frescas, tanto en el desarrollo de nuevos productos como en la forma de promocionar la marca. Para ello, se llevó a cabo un proceso de investigación y prueba de recetas de origen internacional, seleccionando aquellas que podían adaptarse de manera efectiva al mercado local, considerando los hábitos de consumo y las preferencias del público objetivo.
+    </p>
+
+    <p>
+      En sus primeras etapas, NUBA comenzó atendiendo pedidos pequeños y personalizados, lo que permitió establecer una relación cercana con los clientes y obtener retroalimentación directa. Esta interacción fue clave para la mejora continua de recetas, la creación de nuevos postres, la innovación en sabores y presentaciones, así como el ajuste de porciones y precios. Al mismo tiempo, se establecieron procesos básicos de producción, control de insumos y organización del trabajo para asegurar consistencia y calidad en cada producto.
+    </p>
+
+    <p>
+      Uno de los elementos distintivos de NUBA es su enfoque innovador en el marketing, aprovechando herramientas modernas para conectar con su público. Entre estas estrategias destaca el uso de llaveros impresos en 3D con tecnología NFC, que permiten a los clientes acceder de forma rápida a las redes sociales del negocio, fortaleciendo la visibilidad de la marca y la interacción digital. Estas acciones reflejan el carácter joven, creativo y actualizado del proyecto.
+    </p>
+
+    <p>
+      La propuesta de valor de NUBA se basa en la elaboración de postres que sobresalen por su sabor, frescura y presentación, utilizando ingredientes seleccionados y cuidando cada etapa del proceso productivo. El catálogo incluye postres inspirados en la repostería internacional, así como creaciones originales, diseñadas para satisfacer los gustos de hombres y mujeres de 15 a 49 años. La atención al cliente, la puntualidad en las entregas y el compromiso con la satisfacción del consumidor son pilares fundamentales del negocio.
+    </p>
+
+    <p>
+      Actualmente, NUBA se encuentra en una etapa de desarrollo y consolidación, con una visión orientada al crecimiento sostenible. Los tres jóvenes que integran el proyecto continúan trabajando en la innovación constante, tanto en la creación de nuevas recetas y postres como en estrategias de marketing que fortalezcan el posicionamiento de la marca. La historia de NUBA representa el esfuerzo, la creatividad y la mentalidad emprendedora de un proyecto que apuesta por la innovación, la adaptación al mercado y la construcción de una marca sólida dentro del sector de la repostería.
+    </p>
+
+    <button class="back" onclick="show('inicio')">Volver al inicio</button>
+  </div>
+</div>
+
+<!-- ===== EQUIPO DE TRABAJO ===== -->
+<div id="equipo" class="screen">
+  <div class="content">
     <h2>Equipo de Trabajo</h2>
-    <ul>
-        <li><strong>Hernández Portillo Kevin Omar</strong> – Líder del proyecto y responsable del área financiera.</li>
-        <li><strong>Hernández Rodríguez Joseph Alberto</strong> – Responsable del área operativa y elaboración de postres.</li>
-        <li><strong>Lujan Robles Danielle Abigail</strong> – Encargada del área creativa, comercial y atención al cliente.</li>
-    </ul>
-</section>
 
-<section>
-    <h2>Producto y Servicio</h2>
     <p>
-        NUBA ofrece postres artesanales elaborados con fruta de temporada y recetas internacionales,
-        cuidando la calidad, el sabor y la presentación. Además, complementa su oferta con bebidas calientes
-        como café, chocolate y té, brindando una experiencia completa al consumidor.
+      El proyecto emprendedor NUBA está conformado por un equipo de trabajo multidisciplinario, en el cual cada integrante desempeña funciones específicas que contribuyen al correcto funcionamiento y desarrollo de la empresa. La asignación de roles se realizó de acuerdo con las habilidades y capacidades de cada miembro, con el objetivo de asegurar una adecuada organización interna y una toma de decisiones eficiente.
     </p>
-</section>
 
-<section>
-    <h2>Descripción del Producto</h2>
+    <h3>Integrantes del equipo:</h3>
+
     <p>
-        La empresa NUBA se dedica a la elaboración y comercialización de postres artesanales personalizados,
-        preparados con ingredientes frescos y de alta calidad. Su enfoque principal es la personalización,
-        permitiendo que cada producto se adapte a gustos, necesidades y ocasiones especiales.
+      • Hernández Portillo Kevin Omar, quien funge como líder del proyecto y responsable del área financiera.
     </p>
     <p>
-        NUBA ofrece piezas individuales, presentaciones familiares y paquetes variados, adaptándose a
-        diferentes presupuestos y momentos de consumo, creando experiencias memorables para el cliente.
+      • Hernández Rodríguez Joseph Alberto, encargado del área operativa.
     </p>
-</section>
+    <p>
+      • Lujan Robles Danielle Abigail, responsable del área creativa y comercial.
+    </p>
 
-<section>
+    <h3>Funciones y Títulos de los Miembros del Equipo</h3>
+
+    <p>
+      • Hernández Portillo Kevin Omar es el encargado de la supervisión general de cada área, la búsqueda de proveedores y materias primas, así como del financiamiento y control económico del proyecto.
+    </p>
+    <p>
+      • Hernández Rodríguez Joseph Alberto se responsabiliza de la creación y elaboración de los postres, asegurando el cumplimiento de los estándares de calidad, sabor y presentación establecidos por la empresa.
+    </p>
+    <p>
+      • Lujan Robles Danielle Abigail se desempeña como encargada del área de publicidad, promoción y ventas, enfocándose en posicionar el producto en el mercado y en la atención al cliente.
+    </p>
+
+    <button class="back" onclick="show('inicio')">Volver al inicio</button>
+  </div>
+</div>
+
+<!-- ===== PRODUCTO ===== -->
+<div id="producto" class="screen">
+  <div class="content">
+    <h2>Producto o Servicio</h2>
+
+    <p>NUBA es un emprendimiento dedicado a la elaboración y comercialización de postres artesanales e internacionales personalizados en Tepic, Nayarit.</p>
+
+    <p>Todos los postres son preparados con ingredientes frescos y de alta calidad, cuidando cada detalle del proceso de elaboración.</p>
+
+    <p>Además, se ofrece una línea de bebidas calientes como café, chocolate y té, complementando la experiencia del consumidor.</p>
+
+<h2>Descripción del Producto o Servicio</h2>
+
+    <p>
+      La empresa NUBA es un emprendimiento dedicado a la elaboración y comercialización de postres artesanales e internacionales personalizados, orientado a satisfacer las necesidades y preferencias de sus consumidores en la ciudad de Tepic, Nayarit. La propuesta de valor de NUBA se centra en ofrecer productos que combinan calidad, sabor y creatividad, cuidando cada detalle del proceso de elaboración para garantizar una experiencia gastronómica única. Todos los postres son preparados con ingredientes frescos, de alta calidad y de temporada, seleccionados cuidadosamente para asegurar un sabor auténtico, una textura adecuada y una presentación atractiva que refleje el compromiso de la empresa con la excelencia.
+    </p>
+
+    <p>
+      Uno de los principales elementos que distingue a NUBA es su enfoque en la personalización del producto, permitiendo que cada postre se adapte a los gustos, necesidades y ocasiones especiales de sus clientes. Ya sea para celebraciones familiares, eventos sociales o consumo personal, NUBA busca que cada producto transmita originalidad y exclusividad. Además, la empresa apuesta por la innovación constante en la presentación de sus postres y en el diseño de sus empaques, utilizando temáticas modernas, creativas y visualmente atractivas, lo que convierte cada entrega en una experiencia especial y memorable para el consumidor.
+    </p>
+
+    <p>
+      NUBA ofrece una amplia variedad de opciones que incluyen piezas individuales y presentaciones familiares, así como paquetes variados que permiten al cliente conocer y disfrutar diferentes tipos de postres en una sola compra. Esta diversidad de presentaciones está pensada para brindar comodidad, accesibilidad y una experiencia completa, adaptándose a distintos presupuestos y momentos de consumo. De esta manera, la empresa no solo busca vender postres, sino también crear momentos de satisfacción y disfrute, aportando valor al cliente a través de productos artesanales, innovadores y de alta calidad que fortalecen la identidad y diferenciación de la marca en el mercado local.
+    </p>
+
+    <button class="back" onclick="show('inicio')">Volver al inicio</button>
+  </div>
+</div>
+
+
+<!-- ===== VENTAJA COMPETITIVA ===== -->
+<div id="ventaja" class="screen">
+  <div class="content">
     <h2>Ventaja Competitiva</h2>
-    <p>
-        NUBA cuenta con precios accesibles que van desde <strong>$65 hasta $275</strong>, manteniendo altos
-        estándares de calidad. La empresa se distingue por la personalización, toppings adicionales para
-        llevar, diseño de empaques y promociones especiales.
-    </p>
-    <p>
-        Su ventaja interna radica en el equilibrio entre costos y calidad, mientras que su ventaja externa
-        se refleja en estrategias de promociones y fidelización del cliente.
-    </p>
-</section>
 
-<footer>
-    <p>NUBA Repostería ©️ 2026 | Proyecto Académico y Emprendedor</p>
-</footer>
+    <p>
+      La empresa NUBA cuenta con una ventaja competitiva sólida que le permite diferenciarse dentro del mercado local de postres artesanales. Uno de sus principales elementos competitivos es el precio, ya que ofrece productos con precios accesibles para el consumidor, que van desde $65 hasta $275, lo que facilita el acceso a diferentes segmentos del mercado sin sacrificar la calidad del producto.
+    </p>
+
+    <p>
+      Otro aspecto fundamental es la calidad, ya que NUBA elabora sus postres con ingredientes de alta calidad y brinda la posibilidad de personalización, lo que incrementa el valor percibido por el cliente. A esto se suma la experiencia de consumo, al ofrecer toppings adicionales para llevar, permitiendo que los consumidores personalicen sus postres de acuerdo con sus gustos y preferencias, generando una experiencia más interactiva y satisfactoria.
+    </p>
+
+    <p>
+      En cuanto a la personalización y el servicio, la empresa se distingue por el diseño y empaquetado del producto, cuidando aspectos como el estilo, la presentación y la forma de entrega, lo que refuerza la imagen de la marca y mejora la percepción del cliente.
+    </p>
+
+    <p>
+      Asimismo, NUBA presenta ventajas tanto internas como externas. La ventaja interna se basa en el equilibrio entre los precios competitivos de los postres y la calidad de los ingredientes utilizados, lo que permite mantener un control adecuado de costos y estándares de calidad. Por otro lado, la ventaja externa se refleja en la implementación de precios especiales y promociones en la compra de cierta cantidad de productos, incentivando la recompra y fortaleciendo la fidelidad del consumidor.
+    </p>
+
+    <button class="back" onclick="show('inicio')">Volver al inicio</button>
+  </div>
+</div>
+
+<script>
+function show(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+</script>
 
 </body>
 </html>
